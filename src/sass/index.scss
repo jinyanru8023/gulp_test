@@ -1,0 +1,106 @@
+@import 'public';
+#box{
+    width:400px;
+    height: 600px;
+    margin: auto;
+    position: relative;
+    border: 1px solid black;
+    .top{
+        width:400px;
+        height: 400px;
+        position: absolute;
+        border: 1px solid green;
+    }
+    .mark_l{
+        width: 200px;
+        height: 400px;
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+    }
+    .mark_r{
+        width: 200px;
+        height:400px;
+        position: absolute;
+        background: pink;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        z-index:1;
+      #div &{
+          background: gray;
+      }
+    }
+}
+nav a {
+    color:red;
+    header &{
+        color : green;
+    }
+}
+#top_nav_li{
+    border : {
+        style : solid;
+        left : {
+            width : 4px;
+            color: gray;
+        }
+        right : {
+            width : 2px;
+            color: white;
+        }
+    }
+}
+body{
+font-size:$fontSize;
+}
+// #pox{
+//     font : $fontSize / $lineHeight;
+// }
+#pox{
+    font: #{$fontSize} / #{$lineHeight};
+}
+$borderDir : bottom;
+#pox1{
+    border-#{$borderDir} :1px solid black;
+    @include size(100%,50%);
+}
+#pox2{
+    @include size(85px,60px);
+    @include position(absolute,50px,20px,30px,6px);
+}
+#box2{
+    @extend #pox2;
+    background :blue;
+    
+}
+.list{
+    background-color: fnColor(ccc);
+}
+$hehe : aaa;
+body{
+    @if $hehe == aaa{
+        background-color:black;
+    }@else if $hehe == bbb{
+         background: red;
+    }@else{
+        background:green;
+    }
+}
+$colNum : 4;
+@for $i from 1 through $colNum{
+col-#{$i}{
+    width : 100% / $colNum * $i;
+}
+}
+@for $j from 1 to $colNum {
+    row-#{$j}{
+        height : 100% / $colNum * $j;
+    }
+}
+$colors : success error warging;
+@each $k in $colors{
+    i-#{$k}{
+        background-image:url(img/i/#{$k}.jpg);
+    }
+}

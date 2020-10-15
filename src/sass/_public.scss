@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  $fontSize : 18px !default;
+  $lineHeight : 1.5;
+  $borderDir : top;
+  @mixin size($width:100px,$height:100px){
+    width : $width;
+    height: $height;
+  }
+  @mixin position($position : relative,$left:0,$top:0,$right:0,$bottom:0){
+    position :$position;
+    left : $left;
+    top : $top;
+    right :$right;
+    bottom: $bottom;
+  }
+  $map : (aaa : black, bbb : yellow,ccc: red);
+  @function fnColor($key){
+    @return map-get($map,$key);
+  }
